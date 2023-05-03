@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== BOXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <title>TraceTheTreasure</title>
+    <script type="text/javascript">
+      function preback(){
+        window.history.forward();}
+        setTimeout("preback()",0);
+        window.onunload=function(){null};
+      
+    </script>
+  </head>
+  <body background="img/body_bg.png">
+    <section class="modal container">
+      
+        
+
+          <img src="img/gamelose.png" alt="" class="modal__img" />
+
+          
+          <p class="modal__description"></p>
+           <a href="fighter.html">
+          <button class="modal__button modal__button-width">Play Again!</button>
+           </a>
+           <a href="home.html">
+          <button class="modal__button-link close-modal">Close</button>
+        </a>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

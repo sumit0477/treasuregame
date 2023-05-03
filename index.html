@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TraceTheTreasure</title>
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="login/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript">
+      function preback() {
+        window.history.forward();
+      }
+      setTimeout("preback()", 0);
+      window.onunload = function () {
+        null;
+      };
+    </script>
+  </head>
+  <body>
+    <img class="wave" src="img\1157454 (1).jpg" />
+    <div class="container">
+      <div class="img"></div>
+      <div class="login-content">
+        <form name="submit-to-google-sheet">
+          <h2 class="title">Welcome</h2>
+          <div class="input-div one">
+            <div class="i">
+              <i class="fas fa-user"></i>
+            </div>
+
+            <div class="div">
+              <h5>Email</h5>
+              <input type="email" name="Email" class="input" id="Email" />
+            </div>
+          </div>
+          <div class="input-div pass">
+            <div class="i">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="div">
+              <h5>Password</h5>
+              <input
+                type="password"
+                name="Password"
+                class="input"
+                id="password"
+              />
+            </div>
+          </div>
+          <input type="submit" value="Login" class="btn" onclick="auth()" />
+        </form>
+        <script>
+          const scriptURL =
+            "https://script.google.com/macros/s/AKfycbwIWBHzV9Gxl6Mip9zegyfkFixULnBpQ6AcNb11bI7wFFjss2gY0erb_Aagd3JdDJPQ_Q/exec";
+          const form = document.forms["submit-to-google-sheet"];
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            fetch(scriptURL, { method: "POST", body: new FormData(form) })
+              .then((response) => console.log("Success!", response))
+              .catch((error) => console.error("Error!", error.message));
+          });
+        </script>
+        <script>
+          function auth() {
+            var email = document.getElementById("Email").value;
+            var password = document.getElementById("password").value;
+
+            if (email == "admin@0477" && password == "0477") {
+              window.location.assign("display.html");
+            } else {
+              window.location.assign("home.html");
+              alert("Login Successfully");
+              return;
+            }
+          }
+        </script>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
